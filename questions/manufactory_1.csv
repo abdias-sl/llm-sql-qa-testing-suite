@@ -1,2147 +1,209 @@
-id,db_id,query,question,schema,query_res
-0,manufactory_1,SELECT founder FROM manufacturers WHERE name  =  'Sony',Who is the founder of Sony?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Andy',)
+id,db_id,query,question,query_res
+0,manufactory_1,SELECT founder FROM manufacturers WHERE name  =  'Sony',Who is the founder of Sony?,"('Andy',)
 "
-1,manufactory_1,SELECT founder FROM manufacturers WHERE name  =  'Sony',Return the founder of Sony.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Andy',)
+1,manufactory_1,SELECT founder FROM manufacturers WHERE name  =  'Sony',Return the founder of Sony.,"('Andy',)
 "
-2,manufactory_1,SELECT headquarter FROM manufacturers WHERE founder  =  'James',Where is the headquarter of the company founded by James?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Los Angeles',)
+2,manufactory_1,SELECT headquarter FROM manufacturers WHERE founder  =  'James',Where is the headquarter of the company founded by James?,"('Los Angeles',)
 "
-3,manufactory_1,SELECT headquarter FROM manufacturers WHERE founder  =  'James',What is the headquarter of the company whose founder is James?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Los Angeles',)
+3,manufactory_1,SELECT headquarter FROM manufacturers WHERE founder  =  'James',What is the headquarter of the company whose founder is James?,"('Los Angeles',)
 "
-4,manufactory_1,"SELECT name ,  headquarter FROM manufacturers ORDER BY revenue DESC","Find all manufacturers' names and their headquarters, sorted by the ones with highest revenue first.","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Iomega', 'Beijing')
+4,manufactory_1,"SELECT name ,  headquarter FROM manufacturers ORDER BY revenue DESC","Find all manufacturers' names and their headquarters, sorted by the ones with highest revenue first.","('Iomega', 'Beijing')
 ('Fujitsu', 'Taiwan')
 ('Sony', 'Tokyo')
 ('Creative Labs', 'Austin')
 ('Hewlett-Packard', 'Los Angeles')
 ('Winchester', 'Paris')
 "
-5,manufactory_1,"SELECT name ,  headquarter FROM manufacturers ORDER BY revenue DESC","What are the names and headquarters of all manufacturers, ordered by revenue descending?","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Iomega', 'Beijing')
+5,manufactory_1,"SELECT name ,  headquarter FROM manufacturers ORDER BY revenue DESC","What are the names and headquarters of all manufacturers, ordered by revenue descending?","('Iomega', 'Beijing')
 ('Fujitsu', 'Taiwan')
 ('Sony', 'Tokyo')
 ('Creative Labs', 'Austin')
 ('Hewlett-Packard', 'Los Angeles')
 ('Winchester', 'Paris')
 "
-6,manufactory_1,"SELECT avg(revenue) ,  max(revenue) ,  sum(revenue) FROM manufacturers","What are the average, maximum and total revenues of all companies?","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(105.0, 200.0, 630.0)
+6,manufactory_1,"SELECT avg(revenue) ,  max(revenue) ,  sum(revenue) FROM manufacturers","What are the average, maximum and total revenues of all companies?","(105.0, 200.0, 630.0)
 "
-7,manufactory_1,"SELECT avg(revenue) ,  max(revenue) ,  sum(revenue) FROM manufacturers","Return the average, maximum, and total revenues across all manufacturers.","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(105.0, 200.0, 630.0)
+7,manufactory_1,"SELECT avg(revenue) ,  max(revenue) ,  sum(revenue) FROM manufacturers","Return the average, maximum, and total revenues across all manufacturers.","(105.0, 200.0, 630.0)
 "
-8,manufactory_1,SELECT count(*) FROM manufacturers WHERE founder  =  'Andy',How many companies were created by Andy?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(1,)
+8,manufactory_1,SELECT count(*) FROM manufacturers WHERE founder  =  'Andy',How many companies were created by Andy?,"(1,)
 "
-9,manufactory_1,SELECT count(*) FROM manufacturers WHERE founder  =  'Andy',Return the number of companies created by Andy.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(1,)
+9,manufactory_1,SELECT count(*) FROM manufacturers WHERE founder  =  'Andy',Return the number of companies created by Andy.,"(1,)
 "
-10,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE headquarter  =  'Austin',Find the total revenue created by the companies whose headquarter is located at Austin.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(100.0,)
+10,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE headquarter  =  'Austin',Find the total revenue created by the companies whose headquarter is located at Austin.,"(100.0,)
 "
-11,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE headquarter  =  'Austin',What is the sum of revenue from companies with headquarters in Austin?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(100.0,)
+11,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE headquarter  =  'Austin',What is the sum of revenue from companies with headquarters in Austin?,"(100.0,)
 "
-12,manufactory_1,SELECT DISTINCT headquarter FROM manufacturers,What are the different cities listed?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Tokyo',)
+12,manufactory_1,SELECT DISTINCT headquarter FROM manufacturers,What are the different cities listed?,"('Tokyo',)
 ('Austin',)
 ('Los Angeles',)
 ('Beijing',)
 ('Taiwan',)
 ('Paris',)
 "
-13,manufactory_1,SELECT DISTINCT headquarter FROM manufacturers,Give the distinct headquarters of manufacturers.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Tokyo',)
+13,manufactory_1,SELECT DISTINCT headquarter FROM manufacturers,Give the distinct headquarters of manufacturers.,"('Tokyo',)
 ('Austin',)
 ('Los Angeles',)
 ('Beijing',)
 ('Taiwan',)
 ('Paris',)
 "
-14,manufactory_1,SELECT count(*) FROM manufacturers WHERE headquarter  =  'Tokyo' OR headquarter  =  'Beijing',Find the number of manufactures that are based in Tokyo or Beijing.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(2,)
+14,manufactory_1,SELECT count(*) FROM manufacturers WHERE headquarter  =  'Tokyo' OR headquarter  =  'Beijing',Find the number of manufactures that are based in Tokyo or Beijing.,"(2,)
 "
-15,manufactory_1,SELECT count(*) FROM manufacturers WHERE headquarter  =  'Tokyo' OR headquarter  =  'Beijing',How many manufacturers have headquarters in either Tokyo or Beijing?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(2,)
+15,manufactory_1,SELECT count(*) FROM manufacturers WHERE headquarter  =  'Tokyo' OR headquarter  =  'Beijing',How many manufacturers have headquarters in either Tokyo or Beijing?,"(2,)
 "
-16,manufactory_1,SELECT founder FROM manufacturers WHERE name LIKE 'S%',Find the founder of the company whose name begins with the letter 'S'.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Andy',)
+16,manufactory_1,SELECT founder FROM manufacturers WHERE name LIKE 'S%',Find the founder of the company whose name begins with the letter 'S'.,"('Andy',)
 "
-17,manufactory_1,SELECT founder FROM manufacturers WHERE name LIKE 'S%',Who is the founders of companies whose first letter is S?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Andy',)
+17,manufactory_1,SELECT founder FROM manufacturers WHERE name LIKE 'S%',Who is the founders of companies whose first letter is S?,"('Andy',)
 "
-18,manufactory_1,SELECT name FROM manufacturers WHERE revenue BETWEEN 100 AND 150,Find the name of companies whose revenue is between 100 and 150.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Sony',)
+18,manufactory_1,SELECT name FROM manufacturers WHERE revenue BETWEEN 100 AND 150,Find the name of companies whose revenue is between 100 and 150.,"('Sony',)
 ('Creative Labs',)
 ('Fujitsu',)
 "
-19,manufactory_1,SELECT name FROM manufacturers WHERE revenue BETWEEN 100 AND 150,What are the names of companies with revenue between 100 and 150?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Sony',)
+19,manufactory_1,SELECT name FROM manufacturers WHERE revenue BETWEEN 100 AND 150,What are the names of companies with revenue between 100 and 150?,"('Sony',)
 ('Creative Labs',)
 ('Fujitsu',)
 "
-20,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE Headquarter  =  'Tokyo' OR Headquarter  =  'Taiwan',What is the total revenue of all companies whose main office is at Tokyo or Taiwan?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(250.0,)
+20,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE Headquarter  =  'Tokyo' OR Headquarter  =  'Taiwan',What is the total revenue of all companies whose main office is at Tokyo or Taiwan?,"(250.0,)
 "
-21,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE Headquarter  =  'Tokyo' OR Headquarter  =  'Taiwan',Return the total revenue of companies with headquarters in Tokyo or Taiwan.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(250.0,)
+21,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE Headquarter  =  'Tokyo' OR Headquarter  =  'Taiwan',Return the total revenue of companies with headquarters in Tokyo or Taiwan.,"(250.0,)
 "
-22,manufactory_1,SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Creative Labs' INTERSECT SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Sony',Find the name of product that is produced by both companies Creative Labs and Sony.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-",
-23,manufactory_1,SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Creative Labs' INTERSECT SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Sony',What are the names of products produced by both Creative Labs and Sony?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-",
-24,manufactory_1,"SELECT name ,  headquarter ,  founder FROM manufacturers ORDER BY revenue DESC LIMIT 1","Find the name, headquarter and founder of the manufacturer that has the highest revenue.","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Iomega', 'Beijing', 'Mary')
+22,manufactory_1,SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Creative Labs' INTERSECT SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Sony',Find the name of product that is produced by both companies Creative Labs and Sony.,
+23,manufactory_1,SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Creative Labs' INTERSECT SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Sony',What are the names of products produced by both Creative Labs and Sony?,
+24,manufactory_1,"SELECT name ,  headquarter ,  founder FROM manufacturers ORDER BY revenue DESC LIMIT 1","Find the name, headquarter and founder of the manufacturer that has the highest revenue.","('Iomega', 'Beijing', 'Mary')
 "
-25,manufactory_1,"SELECT name ,  headquarter ,  founder FROM manufacturers ORDER BY revenue DESC LIMIT 1","What are the names, headquarters and founders of the company with the highest revenue?","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Iomega', 'Beijing', 'Mary')
+25,manufactory_1,"SELECT name ,  headquarter ,  founder FROM manufacturers ORDER BY revenue DESC LIMIT 1","What are the names, headquarters and founders of the company with the highest revenue?","('Iomega', 'Beijing', 'Mary')
 "
-26,manufactory_1,"SELECT name ,  headquarter ,  revenue FROM manufacturers ORDER BY revenue DESC","Find the name, headquarter and revenue of all manufacturers sorted by their revenue in the descending order.","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Iomega', 'Beijing', 200.0)
+26,manufactory_1,"SELECT name ,  headquarter ,  revenue FROM manufacturers ORDER BY revenue DESC","Find the name, headquarter and revenue of all manufacturers sorted by their revenue in the descending order.","('Iomega', 'Beijing', 200.0)
 ('Fujitsu', 'Taiwan', 130.0)
 ('Sony', 'Tokyo', 120.0)
 ('Creative Labs', 'Austin', 100.0)
 ('Hewlett-Packard', 'Los Angeles', 50.0)
 ('Winchester', 'Paris', 30.0)
 "
-27,manufactory_1,"SELECT name ,  headquarter ,  revenue FROM manufacturers ORDER BY revenue DESC","What are the names, headquarters and revenues for manufacturers, sorted by revenue descending?","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Iomega', 'Beijing', 200.0)
+27,manufactory_1,"SELECT name ,  headquarter ,  revenue FROM manufacturers ORDER BY revenue DESC","What are the names, headquarters and revenues for manufacturers, sorted by revenue descending?","('Iomega', 'Beijing', 200.0)
 ('Fujitsu', 'Taiwan', 130.0)
 ('Sony', 'Tokyo', 120.0)
 ('Creative Labs', 'Austin', 100.0)
 ('Hewlett-Packard', 'Los Angeles', 50.0)
 ('Winchester', 'Paris', 30.0)
 "
-28,manufactory_1,SELECT name FROM manufacturers WHERE revenue  >  (SELECT avg(revenue) FROM manufacturers),Find the name of companies whose revenue is greater than the average revenue of all companies.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Sony',)
+28,manufactory_1,SELECT name FROM manufacturers WHERE revenue  >  (SELECT avg(revenue) FROM manufacturers),Find the name of companies whose revenue is greater than the average revenue of all companies.,"('Sony',)
 ('Iomega',)
 ('Fujitsu',)
 "
-29,manufactory_1,SELECT name FROM manufacturers WHERE revenue  >  (SELECT avg(revenue) FROM manufacturers),What are the names of manufacturers with revenue greater than the average of all revenues?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Sony',)
+29,manufactory_1,SELECT name FROM manufacturers WHERE revenue  >  (SELECT avg(revenue) FROM manufacturers),What are the names of manufacturers with revenue greater than the average of all revenues?,"('Sony',)
 ('Iomega',)
 ('Fujitsu',)
 "
-30,manufactory_1,SELECT name FROM manufacturers WHERE revenue  <  (SELECT min(revenue) FROM manufacturers WHERE headquarter  =  'Austin'),Find the name of companies whose revenue is smaller than the revenue of all companies based in Austin.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Hewlett-Packard',)
+30,manufactory_1,SELECT name FROM manufacturers WHERE revenue  <  (SELECT min(revenue) FROM manufacturers WHERE headquarter  =  'Austin'),Find the name of companies whose revenue is smaller than the revenue of all companies based in Austin.,"('Hewlett-Packard',)
 ('Winchester',)
 "
-31,manufactory_1,SELECT name FROM manufacturers WHERE revenue  <  (SELECT min(revenue) FROM manufacturers WHERE headquarter  =  'Austin'),What are the names of companies with revenue less than the lowest revenue of any manufacturer in Austin?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Hewlett-Packard',)
+31,manufactory_1,SELECT name FROM manufacturers WHERE revenue  <  (SELECT min(revenue) FROM manufacturers WHERE headquarter  =  'Austin'),What are the names of companies with revenue less than the lowest revenue of any manufacturer in Austin?,"('Hewlett-Packard',)
 ('Winchester',)
 "
-32,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE revenue  >  (SELECT min(revenue) FROM manufacturers WHERE headquarter  =  'Austin'),Find the total revenue of companies whose revenue is larger than the revenue of some companies based in Austin.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(450.0,)
+32,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE revenue  >  (SELECT min(revenue) FROM manufacturers WHERE headquarter  =  'Austin'),Find the total revenue of companies whose revenue is larger than the revenue of some companies based in Austin.,"(450.0,)
 "
-33,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE revenue  >  (SELECT min(revenue) FROM manufacturers WHERE headquarter  =  'Austin'),What is the total revenue of companies with revenue greater than the lowest revenue of any manufacturer in Austin?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(450.0,)
+33,manufactory_1,SELECT sum(revenue) FROM manufacturers WHERE revenue  >  (SELECT min(revenue) FROM manufacturers WHERE headquarter  =  'Austin'),What is the total revenue of companies with revenue greater than the lowest revenue of any manufacturer in Austin?,"(450.0,)
 "
-34,manufactory_1,"SELECT sum(revenue) ,  founder FROM manufacturers GROUP BY founder",Find the total revenue of companies of each founder.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(120.0, 'Andy')
+34,manufactory_1,"SELECT sum(revenue) ,  founder FROM manufacturers GROUP BY founder",Find the total revenue of companies of each founder.,"(120.0, 'Andy')
 (50.0, 'James')
 (130.0, 'John')
 (200.0, 'Mary')
 (100.0, 'Owen')
 (30.0, 'Robert')
 "
-35,manufactory_1,"SELECT sum(revenue) ,  founder FROM manufacturers GROUP BY founder",What is the total revenue of companies started by founder?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(120.0, 'Andy')
+35,manufactory_1,"SELECT sum(revenue) ,  founder FROM manufacturers GROUP BY founder",What is the total revenue of companies started by founder?,"(120.0, 'Andy')
 (50.0, 'James')
 (130.0, 'John')
 (200.0, 'Mary')
 (100.0, 'Owen')
 (30.0, 'Robert')
 "
-36,manufactory_1,"SELECT name ,  max(revenue) ,  Headquarter FROM manufacturers GROUP BY Headquarter",Find the name and revenue of the company that earns the highest revenue in each city.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Creative Labs', 100.0, 'Austin')
+36,manufactory_1,"SELECT name ,  max(revenue) ,  Headquarter FROM manufacturers GROUP BY Headquarter",Find the name and revenue of the company that earns the highest revenue in each city.,"('Creative Labs', 100.0, 'Austin')
 ('Iomega', 200.0, 'Beijing')
 ('Hewlett-Packard', 50.0, 'Los Angeles')
 ('Winchester', 30.0, 'Paris')
 ('Fujitsu', 130.0, 'Taiwan')
 ('Sony', 120.0, 'Tokyo')
 "
-37,manufactory_1,"SELECT name ,  max(revenue) ,  Headquarter FROM manufacturers GROUP BY Headquarter",What are the names and revenues of the companies with the highest revenues in each headquarter city?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Creative Labs', 100.0, 'Austin')
+37,manufactory_1,"SELECT name ,  max(revenue) ,  Headquarter FROM manufacturers GROUP BY Headquarter",What are the names and revenues of the companies with the highest revenues in each headquarter city?,"('Creative Labs', 100.0, 'Austin')
 ('Iomega', 200.0, 'Beijing')
 ('Hewlett-Packard', 50.0, 'Los Angeles')
 ('Winchester', 30.0, 'Paris')
 ('Fujitsu', 130.0, 'Taiwan')
 ('Sony', 120.0, 'Tokyo')
 "
-38,manufactory_1,"SELECT sum(revenue) ,  name FROM manufacturers GROUP BY name",Find the total revenue for each manufacturer.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(100.0, 'Creative Labs')
+38,manufactory_1,"SELECT sum(revenue) ,  name FROM manufacturers GROUP BY name",Find the total revenue for each manufacturer.,"(100.0, 'Creative Labs')
 (130.0, 'Fujitsu')
 (50.0, 'Hewlett-Packard')
 (200.0, 'Iomega')
 (120.0, 'Sony')
 (30.0, 'Winchester')
 "
-39,manufactory_1,"SELECT sum(revenue) ,  name FROM manufacturers GROUP BY name",What is the total revenue of each manufacturer?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(100.0, 'Creative Labs')
+39,manufactory_1,"SELECT sum(revenue) ,  name FROM manufacturers GROUP BY name",What is the total revenue of each manufacturer?,"(100.0, 'Creative Labs')
 (130.0, 'Fujitsu')
 (50.0, 'Hewlett-Packard')
 (200.0, 'Iomega')
 (120.0, 'Sony')
 (30.0, 'Winchester')
 "
-40,manufactory_1,"SELECT avg(T1.price) ,  T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.name","Find the average prices of all products from each manufacture, and list each company's name.","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(150.0, 'Creative Labs')
+40,manufactory_1,"SELECT avg(T1.price) ,  T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.name","Find the average prices of all products from each manufacture, and list each company's name.","(150.0, 'Creative Labs')
 (240.0, 'Fujitsu')
 (162.0, 'Hewlett-Packard')
 (150.0, 'Iomega')
 (240.0, 'Sony')
 (62.5, 'Winchester')
 "
-41,manufactory_1,"SELECT avg(T1.price) ,  T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.name",What are the average prices of products for each manufacturer?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(150.0, 'Creative Labs')
+41,manufactory_1,"SELECT avg(T1.price) ,  T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.name",What are the average prices of products for each manufacturer?,"(150.0, 'Creative Labs')
 (240.0, 'Fujitsu')
 (162.0, 'Hewlett-Packard')
 (150.0, 'Iomega')
 (240.0, 'Sony')
 (62.5, 'Winchester')
 "
-42,manufactory_1,"SELECT count(DISTINCT T1.name) ,  T2.Headquarter FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.Headquarter",Find the number of different products that are produced by companies at different headquarter cities.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(3, 'Austin')
+42,manufactory_1,"SELECT count(DISTINCT T1.name) ,  T2.Headquarter FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.Headquarter",Find the number of different products that are produced by companies at different headquarter cities.,"(3, 'Austin')
 (1, 'Beijing')
 (3, 'Los Angeles')
 (2, 'Paris')
 (1, 'Taiwan')
 (1, 'Tokyo')
 "
-43,manufactory_1,"SELECT count(DISTINCT T1.name) ,  T2.Headquarter FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.Headquarter",How many different products are produced in each headquarter city?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(3, 'Austin')
+43,manufactory_1,"SELECT count(DISTINCT T1.name) ,  T2.Headquarter FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.Headquarter",How many different products are produced in each headquarter city?,"(3, 'Austin')
 (1, 'Beijing')
 (3, 'Los Angeles')
 (2, 'Paris')
 (1, 'Taiwan')
 (1, 'Tokyo')
 "
-44,manufactory_1,SELECT count(DISTINCT name) FROM products WHERE name NOT IN (SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Sony'),Find number of products which Sony does not make.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(9,)
+44,manufactory_1,SELECT count(DISTINCT name) FROM products WHERE name NOT IN (SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Sony'),Find number of products which Sony does not make.,"(9,)
 "
-45,manufactory_1,SELECT count(DISTINCT name) FROM products WHERE name NOT IN (SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Sony'),How many products are not made by Sony?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(9,)
+45,manufactory_1,SELECT count(DISTINCT name) FROM products WHERE name NOT IN (SELECT T1.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T2.name  =  'Sony'),How many products are not made by Sony?,"(9,)
 "
-46,manufactory_1,SELECT name FROM manufacturers EXCEPT SELECT T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T1.name  =  'DVD drive',Find the name of companies that do not make DVD drive.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Fujitsu',)
+46,manufactory_1,SELECT name FROM manufacturers EXCEPT SELECT T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T1.name  =  'DVD drive',Find the name of companies that do not make DVD drive.,"('Fujitsu',)
 ('Iomega',)
 ('Sony',)
 ('Winchester',)
 "
-47,manufactory_1,SELECT name FROM manufacturers EXCEPT SELECT T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T1.name  =  'DVD drive',What are the names of companies that do not make DVD drives?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Fujitsu',)
+47,manufactory_1,SELECT name FROM manufacturers EXCEPT SELECT T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code WHERE T1.name  =  'DVD drive',What are the names of companies that do not make DVD drives?,"('Fujitsu',)
 ('Iomega',)
 ('Sony',)
 ('Winchester',)
 "
-48,manufactory_1,"SELECT count(*) ,  T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.name","Find the number of products for each manufacturer, showing the name of each company.","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(3, 'Creative Labs')
+48,manufactory_1,"SELECT count(*) ,  T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.name","Find the number of products for each manufacturer, showing the name of each company.","(3, 'Creative Labs')
 (1, 'Fujitsu')
 (3, 'Hewlett-Packard')
 (1, 'Iomega')
 (1, 'Sony')
 (2, 'Winchester')
 "
-49,manufactory_1,"SELECT count(*) ,  T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.name",How many products are there for each manufacturer?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(3, 'Creative Labs')
+49,manufactory_1,"SELECT count(*) ,  T2.name FROM products AS T1 JOIN manufacturers AS T2 ON T1.Manufacturer  =  T2.code GROUP BY T2.name",How many products are there for each manufacturer?,"(3, 'Creative Labs')
 (1, 'Fujitsu')
 (3, 'Hewlett-Packard')
 (1, 'Iomega')
 (1, 'Sony')
 (2, 'Winchester')
 "
-50,manufactory_1,SELECT Name FROM Products,Select the names of all the products in the store.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Hard drive',)
+50,manufactory_1,SELECT Name FROM Products,Select the names of all the products in the store.,"('Hard drive',)
 ('Memory',)
 ('ZIP drive',)
 ('Floppy disk',)
@@ -2153,45 +215,7 @@ INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
 ('DVD burner',)
 ('DVD drive',)
 "
-51,manufactory_1,SELECT Name FROM Products,What are the names of all products?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Hard drive',)
+51,manufactory_1,SELECT Name FROM Products,What are the names of all products?,"('Hard drive',)
 ('Memory',)
 ('ZIP drive',)
 ('Floppy disk',)
@@ -2203,45 +227,7 @@ INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
 ('DVD burner',)
 ('DVD drive',)
 "
-52,manufactory_1,"SELECT name ,  price FROM products",Select the names and the prices of all the products in the store.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Hard drive', 240)
+52,manufactory_1,"SELECT name ,  price FROM products",Select the names and the prices of all the products in the store.,"('Hard drive', 240)
 ('Memory', 120)
 ('ZIP drive', 150)
 ('Floppy disk', 5)
@@ -2253,45 +239,7 @@ INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
 ('DVD burner', 180)
 ('DVD drive', 150)
 "
-53,manufactory_1,"SELECT name ,  price FROM products",What are the names and prices of all products in the store?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Hard drive', 240)
+53,manufactory_1,"SELECT name ,  price FROM products",What are the names and prices of all products in the store?,"('Hard drive', 240)
 ('Memory', 120)
 ('ZIP drive', 150)
 ('Floppy disk', 5)
@@ -2303,45 +251,7 @@ INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
 ('DVD burner', 180)
 ('DVD drive', 150)
 "
-54,manufactory_1,SELECT name FROM products WHERE price  <=  200,Select the name of the products with a price less than or equal to $200.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Memory',)
+54,manufactory_1,SELECT name FROM products WHERE price  <=  200,Select the name of the products with a price less than or equal to $200.,"('Memory',)
 ('ZIP drive',)
 ('Floppy disk',)
 ('DVD drive',)
@@ -2350,45 +260,7 @@ INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
 ('DVD burner',)
 ('DVD drive',)
 "
-55,manufactory_1,SELECT name FROM products WHERE price  <=  200,What are the names of products with price at most 200?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Memory',)
+55,manufactory_1,SELECT name FROM products WHERE price  <=  200,What are the names of products with price at most 200?,"('Memory',)
 ('ZIP drive',)
 ('Floppy disk',)
 ('DVD drive',)
@@ -2397,457 +269,39 @@ INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
 ('DVD burner',)
 ('DVD drive',)
 "
-56,manufactory_1,SELECT * FROM products WHERE price BETWEEN 60 AND 120,Find all information of all the products with a price between $60 and $120.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(2, 'Memory', 120, 6)
+56,manufactory_1,SELECT * FROM products WHERE price BETWEEN 60 AND 120,Find all information of all the products with a price between $60 and $120.,"(2, 'Memory', 120, 6)
 (7, 'CD drive', 90, 2)
 (9, 'Toner cartridge', 66, 3)
 "
-57,manufactory_1,SELECT * FROM products WHERE price BETWEEN 60 AND 120,What is all the information of all the products that have a price between 60 and 120?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(2, 'Memory', 120, 6)
+57,manufactory_1,SELECT * FROM products WHERE price BETWEEN 60 AND 120,What is all the information of all the products that have a price between 60 and 120?,"(2, 'Memory', 120, 6)
 (7, 'CD drive', 90, 2)
 (9, 'Toner cartridge', 66, 3)
 "
-58,manufactory_1,SELECT avg(price) FROM products,Compute the average price of all the products.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(153.72727272727272,)
+58,manufactory_1,SELECT avg(price) FROM products,Compute the average price of all the products.,"(153.72727272727272,)
 "
-59,manufactory_1,SELECT avg(price) FROM products,What is the average price across all products?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(153.72727272727272,)
+59,manufactory_1,SELECT avg(price) FROM products,What is the average price across all products?,"(153.72727272727272,)
 "
-60,manufactory_1,SELECT avg(price) FROM products WHERE Manufacturer  =  2,Compute the average price of all products with manufacturer code equal to 2.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(150.0,)
+60,manufactory_1,SELECT avg(price) FROM products WHERE Manufacturer  =  2,Compute the average price of all products with manufacturer code equal to 2.,"(150.0,)
 "
-61,manufactory_1,SELECT avg(price) FROM products WHERE Manufacturer  =  2,What is the average price of products with manufacturer codes equal to 2?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(150.0,)
+61,manufactory_1,SELECT avg(price) FROM products WHERE Manufacturer  =  2,What is the average price of products with manufacturer codes equal to 2?,"(150.0,)
 "
-62,manufactory_1,SELECT count(*) FROM products WHERE price >= 180,Compute the number of products with a price larger than or equal to $180.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(5,)
+62,manufactory_1,SELECT count(*) FROM products WHERE price >= 180,Compute the number of products with a price larger than or equal to $180.,"(5,)
 "
-63,manufactory_1,SELECT count(*) FROM products WHERE price >= 180,How many products have prices of at least 180?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(5,)
+63,manufactory_1,SELECT count(*) FROM products WHERE price >= 180,How many products have prices of at least 180?,"(5,)
 "
-64,manufactory_1,"SELECT name ,  price FROM products WHERE price  >=  180 ORDER BY price DESC ,  name ASC","Select the name and price of all products with a price larger than or equal to $180, and sort first by price (in descending order), and then by name  (in ascending order).","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Printer', 270)
+64,manufactory_1,"SELECT name ,  price FROM products WHERE price  >=  180 ORDER BY price DESC ,  name ASC","Select the name and price of all products with a price larger than or equal to $180, and sort first by price (in descending order), and then by name  (in ascending order).","('Printer', 270)
 ('Hard drive', 240)
 ('Monitor', 240)
 ('DVD burner', 180)
 ('DVD drive', 180)
 "
-65,manufactory_1,"SELECT name ,  price FROM products WHERE price  >=  180 ORDER BY price DESC ,  name ASC","What are the names and prices of products that cost at least 180, sorted by price decreasing and name ascending?","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Printer', 270)
+65,manufactory_1,"SELECT name ,  price FROM products WHERE price  >=  180 ORDER BY price DESC ,  name ASC","What are the names and prices of products that cost at least 180, sorted by price decreasing and name ascending?","('Printer', 270)
 ('Hard drive', 240)
 ('Monitor', 240)
 ('DVD burner', 180)
 ('DVD drive', 180)
 "
-66,manufactory_1,SELECT * FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code,Select all the data from the products and each product's manufacturer.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(1, 'Hard drive', 240, 5, 5, 'Fujitsu', 'Taiwan', 'John', 130.0)
+66,manufactory_1,SELECT * FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code,Select all the data from the products and each product's manufacturer.,"(1, 'Hard drive', 240, 5, 5, 'Fujitsu', 'Taiwan', 'John', 130.0)
 (2, 'Memory', 120, 6, 6, 'Winchester', 'Paris', 'Robert', 30.0)
 (3, 'ZIP drive', 150, 4, 4, 'Iomega', 'Beijing', 'Mary', 200.0)
 (4, 'Floppy disk', 5, 6, 6, 'Winchester', 'Paris', 'Robert', 30.0)
@@ -2859,45 +313,7 @@ INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
 (10, 'DVD burner', 180, 2, 2, 'Creative Labs', 'Austin', 'Owen', 100.0)
 (11, 'DVD drive', 150, 3, 3, 'Hewlett-Packard', 'Los Angeles', 'James', 50.0)
 "
-67,manufactory_1,SELECT * FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code,"What is all the product data, as well as  each product's manufacturer?","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(1, 'Hard drive', 240, 5, 5, 'Fujitsu', 'Taiwan', 'John', 130.0)
+67,manufactory_1,SELECT * FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code,"What is all the product data, as well as  each product's manufacturer?","(1, 'Hard drive', 240, 5, 5, 'Fujitsu', 'Taiwan', 'John', 130.0)
 (2, 'Memory', 120, 6, 6, 'Winchester', 'Paris', 'Robert', 30.0)
 (3, 'ZIP drive', 150, 4, 4, 'Iomega', 'Beijing', 'Mary', 200.0)
 (4, 'Floppy disk', 5, 6, 6, 'Winchester', 'Paris', 'Robert', 30.0)
@@ -2909,483 +325,65 @@ INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
 (10, 'DVD burner', 180, 2, 2, 'Creative Labs', 'Austin', 'Owen', 100.0)
 (11, 'DVD drive', 150, 3, 3, 'Hewlett-Packard', 'Los Angeles', 'James', 50.0)
 "
-68,manufactory_1,"SELECT AVG(Price) ,  Manufacturer FROM Products GROUP BY Manufacturer","Select the average price of each manufacturer's products, showing only the manufacturer's code.","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(240.0, 1)
+68,manufactory_1,"SELECT AVG(Price) ,  Manufacturer FROM Products GROUP BY Manufacturer","Select the average price of each manufacturer's products, showing only the manufacturer's code.","(240.0, 1)
 (150.0, 2)
 (162.0, 3)
 (150.0, 4)
 (240.0, 5)
 (62.5, 6)
 "
-69,manufactory_1,"SELECT AVG(Price) ,  Manufacturer FROM Products GROUP BY Manufacturer","What are the average prices of products, grouped by manufacturer code?","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(240.0, 1)
+69,manufactory_1,"SELECT AVG(Price) ,  Manufacturer FROM Products GROUP BY Manufacturer","What are the average prices of products, grouped by manufacturer code?","(240.0, 1)
 (150.0, 2)
 (162.0, 3)
 (150.0, 4)
 (240.0, 5)
 (62.5, 6)
 "
-70,manufactory_1,"SELECT avg(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name","Select the average price of each manufacturer's products, showing the manufacturer's name.","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(150.0, 'Creative Labs')
+70,manufactory_1,"SELECT avg(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name","Select the average price of each manufacturer's products, showing the manufacturer's name.","(150.0, 'Creative Labs')
 (240.0, 'Fujitsu')
 (162.0, 'Hewlett-Packard')
 (150.0, 'Iomega')
 (240.0, 'Sony')
 (62.5, 'Winchester')
 "
-71,manufactory_1,"SELECT avg(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name","What are the average prices of products, grouped by manufacturer name?","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(150.0, 'Creative Labs')
+71,manufactory_1,"SELECT avg(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name","What are the average prices of products, grouped by manufacturer name?","(150.0, 'Creative Labs')
 (240.0, 'Fujitsu')
 (162.0, 'Hewlett-Packard')
 (150.0, 'Iomega')
 (240.0, 'Sony')
 (62.5, 'Winchester')
 "
-72,manufactory_1,"SELECT avg(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name HAVING avg(T1.price) >= 150",Select the names of manufacturer whose products have an average price higher than or equal to $150.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(150.0, 'Creative Labs')
+72,manufactory_1,"SELECT avg(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name HAVING avg(T1.price) >= 150",Select the names of manufacturer whose products have an average price higher than or equal to $150.,"(150.0, 'Creative Labs')
 (240.0, 'Fujitsu')
 (162.0, 'Hewlett-Packard')
 (150.0, 'Iomega')
 (240.0, 'Sony')
 "
-73,manufactory_1,"SELECT avg(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name HAVING avg(T1.price) >= 150",What are the names and average prices of products for manufacturers whose products cost on average 150 or more?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(150.0, 'Creative Labs')
+73,manufactory_1,"SELECT avg(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name HAVING avg(T1.price) >= 150",What are the names and average prices of products for manufacturers whose products cost on average 150 or more?,"(150.0, 'Creative Labs')
 (240.0, 'Fujitsu')
 (162.0, 'Hewlett-Packard')
 (150.0, 'Iomega')
 (240.0, 'Sony')
 "
-74,manufactory_1,"SELECT name ,  price FROM Products ORDER BY price ASC LIMIT 1",Select the name and price of the cheapest product.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Floppy disk', 5)
+74,manufactory_1,"SELECT name ,  price FROM Products ORDER BY price ASC LIMIT 1",Select the name and price of the cheapest product.,"('Floppy disk', 5)
 "
-75,manufactory_1,"SELECT name ,  price FROM Products ORDER BY price ASC LIMIT 1",What is the name and price of the cheapest product?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('Floppy disk', 5)
+75,manufactory_1,"SELECT name ,  price FROM Products ORDER BY price ASC LIMIT 1",What is the name and price of the cheapest product?,"('Floppy disk', 5)
 "
-76,manufactory_1,"SELECT T1.Name ,  max(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name",Select the name of each manufacturer along with the name and price of its most expensive product.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('DVD drive', 180, 'Creative Labs')
+76,manufactory_1,"SELECT T1.Name ,  max(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name",Select the name of each manufacturer along with the name and price of its most expensive product.,"('DVD drive', 180, 'Creative Labs')
 ('Hard drive', 240, 'Fujitsu')
 ('Printer', 270, 'Hewlett-Packard')
 ('ZIP drive', 150, 'Iomega')
 ('Monitor', 240, 'Sony')
 ('Memory', 120, 'Winchester')
 "
-77,manufactory_1,"SELECT T1.Name ,  max(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name","For each manufacturer name, what are the names and prices of their most expensive product?","-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","('DVD drive', 180, 'Creative Labs')
+77,manufactory_1,"SELECT T1.Name ,  max(T1.Price) ,  T2.name FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer  =  T2.code GROUP BY T2.name","For each manufacturer name, what are the names and prices of their most expensive product?","('DVD drive', 180, 'Creative Labs')
 ('Hard drive', 240, 'Fujitsu')
 ('Printer', 270, 'Hewlett-Packard')
 ('ZIP drive', 150, 'Iomega')
 ('Monitor', 240, 'Sony')
 ('Memory', 120, 'Winchester')
 "
-78,manufactory_1,"SELECT code ,  name ,  min(price) FROM products GROUP BY name",Select the code of the product that is cheapest in each product category.,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(7, 'CD drive', 90)
+78,manufactory_1,"SELECT code ,  name ,  min(price) FROM products GROUP BY name",Select the code of the product that is cheapest in each product category.,"(7, 'CD drive', 90)
 (10, 'DVD burner', 180)
 (11, 'DVD drive', 150)
 (4, 'Floppy disk', 5)
@@ -3396,45 +394,7 @@ INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
 (9, 'Toner cartridge', 66)
 (3, 'ZIP drive', 150)
 "
-79,manufactory_1,"SELECT code ,  name ,  min(price) FROM products GROUP BY name",What are the codes and names of the cheapest products in each category?,"-- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
-
-CREATE TABLE Manufacturers (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL,
-  Headquarter VARCHAR(255) NOT NULL,
-  Founder VARCHAR(255) NOT NULL,
-  Revenue REAL,
-  PRIMARY KEY (Code)   
-);
-
-CREATE TABLE Products (
-  Code INTEGER,
-  Name VARCHAR(255) NOT NULL ,
-  Price DECIMAL NOT NULL ,
-  Manufacturer INTEGER NOT NULL,
-  PRIMARY KEY (Code), 
-  FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
-);
-
-INSERT INTO Manufacturers VALUES(1,'Sony', 'Tokyo', 'Andy', 120);
-INSERT INTO Manufacturers VALUES(2,'Creative Labs', 'Austin', 'Owen', 100);
-INSERT INTO Manufacturers VALUES(3,'Hewlett-Packard', 'Los Angeles', 'James', 50);
-INSERT INTO Manufacturers VALUES(4,'Iomega', 'Beijing', 'Mary', 200);
-INSERT INTO Manufacturers VALUES(5,'Fujitsu', 'Taiwan', 'John', 130);
-INSERT INTO Manufacturers VALUES(6,'Winchester', 'Paris', 'Robert', 30);
-
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(4,'Floppy disk',5,6);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(5,'Monitor',240,1);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(6,'DVD drive',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(7,'CD drive',90,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(8,'Printer',270,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(9,'Toner cartridge',66,3);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(10,'DVD burner',180,2);
-INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(11,'DVD drive',150,3);
-","(7, 'CD drive', 90)
+79,manufactory_1,"SELECT code ,  name ,  min(price) FROM products GROUP BY name",What are the codes and names of the cheapest products in each category?,"(7, 'CD drive', 90)
 (10, 'DVD burner', 180)
 (11, 'DVD drive', 150)
 (4, 'Floppy disk', 5)

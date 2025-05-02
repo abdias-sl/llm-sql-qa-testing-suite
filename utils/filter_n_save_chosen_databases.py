@@ -28,6 +28,8 @@ def filter_n_save_chosen_databases():
     filtered_df = train_df[train_df['db_id'].isin(chosen_databases)]
     print(f"\nFiltered DataFrame contains {len(filtered_df)} examples")
     
+    columns_to_keep = ['db_id', 'query', 'question', 'query_res']
     for db in chosen_databases:
         split_df = filtered_df[filtered_df['db_id'] == db].reset_index(drop=True)
+        split_df = split_df[columns_to_keep]
         split_df.to_csv(f'questions/{db}.csv', index=True, index_label='id')
