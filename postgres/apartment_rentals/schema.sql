@@ -1,6 +1,6 @@
 CREATE TABLE Apartment_Buildings (
 building_id INTEGER NOT NULL,
-building_short_name CHAR(15),
+building_short_name CHAR(50),
 building_full_name VARCHAR(80),
 building_description VARCHAR(255),
 building_address VARCHAR(255),
@@ -87,7 +87,7 @@ INSERT INTO Apartment_Facilities (apt_id, facility_code) VALUES (15, 'Gym');
 
 CREATE TABLE Guests (
 guest_id INTEGER NOT NULL,
-gender_code CHAR(1),
+gender_code CHAR(30),
 guest_first_name VARCHAR(80),
 guest_last_name VARCHAR(80),
 date_of_birth TIMESTAMP,

@@ -30,6 +30,24 @@ CREATE TABLE certificate (
     FOREIGN KEY (aid) REFERENCES aircraft(aid)
 );
 
+INSERT INTO aircraft (AID, name, distance) VALUES ('1', 'Boeing 747-400', '8430');
+INSERT INTO aircraft (AID, name, distance) VALUES ('2', 'Boeing 737-800', '3383');
+INSERT INTO aircraft (AID, name, distance) VALUES ('3', 'Airbus A340-300', '7120');
+INSERT INTO aircraft (AID, name, distance) VALUES ('4', 'British Aerospace Jetstream 41', '1502');
+INSERT INTO aircraft (AID, name, distance) VALUES ('5', 'Embraer ERJ-145', '1530');
+INSERT INTO aircraft (AID, name, distance) VALUES ('6', 'SAAB 340', '2128');
+INSERT INTO aircraft (AID, name, distance) VALUES ('7', 'Piper Archer III', '520');
+INSERT INTO aircraft (AID, name, distance) VALUES ('8', 'Tupolev 154', '4103');
+INSERT INTO aircraft (AID, name, distance) VALUES ('16', 'Schwitzer 2-33', '30');
+INSERT INTO aircraft (AID, name, distance) VALUES ('9', 'Lockheed L1011', '6900');
+INSERT INTO aircraft (AID, name, distance) VALUES ('10', 'Boeing 757-300', '4010');
+INSERT INTO aircraft (AID, name, distance) VALUES ('11', 'Boeing 777-300', '6441');
+INSERT INTO aircraft (AID, name, distance) VALUES ('12', 'Boeing 767-400ER', '6475');
+INSERT INTO aircraft (AID, name, distance) VALUES ('13', 'Airbus A320', '2605');
+INSERT INTO aircraft (AID, name, distance) VALUES ('14', 'Airbus A319', '1805');
+INSERT INTO aircraft (AID, name, distance) VALUES ('15', 'Boeing 727', '1504');
+
+
 INSERT INTO flight (FLNO, origin, destination, distance, departure_date, arrival_date, price, aid) VALUES (99.0, 'Los Angeles', 'Washington D.C.', 2308.0, '04/12/2005 09:30', '04/12/2005 09:40', 235.98, 1);
 
 INSERT INTO flight (FLNO, origin, destination, distance, departure_date, arrival_date, price, aid) VALUES (13.0, 'Los Angeles', 'Chicago', 1749.0, '04/12/2005 08:45', '04/12/2005 08:45', 220.98, 3);
@@ -50,22 +68,7 @@ INSERT INTO flight (FLNO, origin, destination, distance, departure_date, arrival
 
 INSERT INTO flight (FLNO, origin, destination, distance, departure_date, arrival_date, price, aid) VALUES (68.0, 'Chicago', 'New York', 802.0, '04/12/2005 09:00', '04/12/2005 12:02', 202.45, 10);
 
-INSERT INTO aircraft (AID, name, distance) VALUES ('1', 'Boeing 747-400', '8430');
-INSERT INTO aircraft (AID, name, distance) VALUES ('2', 'Boeing 737-800', '3383');
-INSERT INTO aircraft (AID, name, distance) VALUES ('3', 'Airbus A340-300', '7120');
-INSERT INTO aircraft (AID, name, distance) VALUES ('4', 'British Aerospace Jetstream 41', '1502');
-INSERT INTO aircraft (AID, name, distance) VALUES ('5', 'Embraer ERJ-145', '1530');
-INSERT INTO aircraft (AID, name, distance) VALUES ('6', 'SAAB 340', '2128');
-INSERT INTO aircraft (AID, name, distance) VALUES ('7', 'Piper Archer III', '520');
-INSERT INTO aircraft (AID, name, distance) VALUES ('8', 'Tupolev 154', '4103');
-INSERT INTO aircraft (AID, name, distance) VALUES ('16', 'Schwitzer 2-33', '30');
-INSERT INTO aircraft (AID, name, distance) VALUES ('9', 'Lockheed L1011', '6900');
-INSERT INTO aircraft (AID, name, distance) VALUES ('10', 'Boeing 757-300', '4010');
-INSERT INTO aircraft (AID, name, distance) VALUES ('11', 'Boeing 777-300', '6441');
-INSERT INTO aircraft (AID, name, distance) VALUES ('12', 'Boeing 767-400ER', '6475');
-INSERT INTO aircraft (AID, name, distance) VALUES ('13', 'Airbus A320', '2605');
-INSERT INTO aircraft (AID, name, distance) VALUES ('14', 'Airbus A319', '1805');
-INSERT INTO aircraft (AID, name, distance) VALUES ('15', 'Boeing 727', '1504');
+
 
 INSERT INTO employee (EID, name, salary) VALUES ('242518965', 'James Smith', '120433');
 INSERT INTO employee (EID, name, salary) VALUES ('141582651', 'Mary Johnson', '178345');
