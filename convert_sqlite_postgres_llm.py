@@ -151,7 +151,8 @@ def process_directories(input_dir, output_dir):
             print(f"Skipping directory {root} as it doesn't contain exactly 2 files")
 
 def main():
-    """Because of context limitations we need to process in chunks and then copy/paste the original insert statements."""
+    """Because of context limitations we need to process in chunks and then copy/paste the original insert statements.
+    NEEDS to be run outside of the sqlite/store_1 directory."""
     if len(sys.argv) != 3:
         print("Usage: python script.py <input_directory> <output_directory>")
         sys.exit(1)
