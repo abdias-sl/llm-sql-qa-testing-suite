@@ -1,8 +1,1 @@
-flight_1
-hr_1
-hospital_1
-department_store
-driving_school
-cre_Theme_park
-apartment_rentals
-manufactory_1
+store_1
