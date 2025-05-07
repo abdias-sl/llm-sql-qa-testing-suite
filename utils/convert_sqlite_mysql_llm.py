@@ -48,7 +48,7 @@ def split_sql_into_statements(sql_content):
     return statements
 
 def convert_sqlite_to_postgres(sql_content):
-    """Convert SQLite schema to PostgreSQL using LangChain and an LLM, handling large files by processing in chunks."""
+    """Convert SQLite schema to MySQL using LangChain and an LLM, handling large files by processing in chunks."""
     # Initialize the LLM
     llm = ChatAnthropic(model_name="claude-3-7-sonnet-20250219",
                         temperature=0.0,
@@ -56,19 +56,9 @@ def convert_sqlite_to_postgres(sql_content):
                         max_tokens=128000,)
     
     # Create the system prompt for conversion
-    system_prompt = """You are an expert database engineer with deep knowledge of both SQLite and PostgreSQL. 
-    Your task is to convert SQLite syntax to valid PostgreSQL syntax.
-    
-    Here are some key differences to handle:
-    1. SQLite uses INTEGER PRIMARY KEY AUTOINCREMENT, while PostgreSQL uses SERIAL or BIGSERIAL
-    2. SQLite has DATETIME types, PostgreSQL has TIMESTAMP or TIMESTAMPTZ
-    3. SQLite uses AUTOINCREMENT, PostgreSQL uses SERIAL
-    4. SQLite has different foreign key syntax
-    5. PostgreSQL is more strict about quoting and identifiers
-    6. Convert SQLite's TEXT type to PostgreSQL's TEXT
-    7. Handle any other syntax differences between the two systems
-    
-    Return ONLY the converted PostgreSQL results with no additional explanations or comments."""
+    system_prompt = """You are an expert database engineer with deep knowledge of both SQLite and MySQL. 
+    Your task is to convert SQLite syntax to valid MySQL syntax.
+    Return ONLY the converted MySQL results with no additional explanations or comments."""
     
     # Split the SQL content into manageable chunks based on CREATE statements
     sql_statements = split_sql_into_statements(sql_content)
