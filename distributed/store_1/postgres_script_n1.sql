@@ -1,30 +1,22 @@
-DROP TABLE IF EXISTS albums;
-
 DROP TABLE IF EXISTS artists;
-
-DROP TABLE IF EXISTS customers;
-
-DROP TABLE IF EXISTS employees;
-
+DROP TABLE IF EXISTS albums;
 DROP TABLE IF EXISTS genres;
-
+DROP TABLE IF EXISTS playlists;
+DROP TABLE IF EXISTS playlist_tracks;
+DROP TABLE IF EXISTS tracks;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS invoices;
-
 DROP TABLE IF EXISTS invoice_lines;
-
 DROP TABLE IF EXISTS media_types;
 
-DROP TABLE IF EXISTS playlists;
-
-DROP TABLE IF EXISTS playlist_tracks;
-
-DROP TABLE IF EXISTS tracks;
 
 CREATE TABLE artists
 (
     id SERIAL PRIMARY KEY,
     name VARCHAR(120)
 );
+
 
 CREATE TABLE albums
 (
@@ -34,6 +26,7 @@ CREATE TABLE albums
     FOREIGN KEY (artist_id) REFERENCES artists (id)
     ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
 
 CREATE TABLE employees
 (
@@ -56,6 +49,7 @@ CREATE TABLE employees
     ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
+
 CREATE TABLE customers
 (
     id SERIAL PRIMARY KEY,
@@ -75,11 +69,6 @@ CREATE TABLE customers
     ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
-CREATE TABLE genres
-(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(120)
-);
 
 CREATE TABLE invoices
 (
@@ -96,11 +85,53 @@ CREATE TABLE invoices
     ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
+
 CREATE TABLE media_types
 (
     id SERIAL PRIMARY KEY,
     name VARCHAR(120)
 );
+
+
+CREATE TABLE genres
+(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(120)
+);
+
+
+CREATE TABLE invoice_lines
+(
+    id SERIAL PRIMARY KEY,
+    invoice_id INTEGER NOT NULL,
+    track_id INTEGER NOT NULL,
+    unit_price NUMERIC(10,2) NOT NULL,
+    quantity INTEGER NOT NULL,
+    FOREIGN KEY (invoice_id) REFERENCES invoices (id)
+    ON DELETE NO ACTION ON UPDATE NO ACTION,
+    FOREIGN KEY (track_id) REFERENCES tracks (id)
+    ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
+
+CREATE TABLE playlists
+(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(120)
+);
+
+
+CREATE TABLE playlist_tracks
+(
+    playlist_id INTEGER  NOT NULL,
+    track_id INTEGER  NOT NULL,
+    CONSTRAINT PK_PlaylistTrack PRIMARY KEY  (playlist_id, track_id),
+    CONSTRAINT fk_playlist FOREIGN KEY (playlist_id) REFERENCES playlists (id)
+    ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT fk_track FOREIGN KEY (track_id) REFERENCES tracks (id)
+    ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
 
 CREATE TABLE tracks
 (
@@ -118,36 +149,6 @@ CREATE TABLE tracks
     FOREIGN KEY (genre_id) REFERENCES genres (id)
     ON DELETE NO ACTION ON UPDATE NO ACTION,
     FOREIGN KEY (media_type_id) REFERENCES media_types (id)
-    ON DELETE NO ACTION ON UPDATE NO ACTION
-);
-
-CREATE TABLE invoice_lines
-(
-    id SERIAL PRIMARY KEY,
-    invoice_id INTEGER NOT NULL,
-    track_id INTEGER NOT NULL,
-    unit_price NUMERIC(10,2) NOT NULL,
-    quantity INTEGER NOT NULL,
-    FOREIGN KEY (invoice_id) REFERENCES invoices (id)
-    ON DELETE NO ACTION ON UPDATE NO ACTION,
-    FOREIGN KEY (track_id) REFERENCES tracks (id)
-    ON DELETE NO ACTION ON UPDATE NO ACTION
-);
-
-CREATE TABLE playlists
-(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(120)
-);
-
-CREATE TABLE playlist_tracks
-(
-    playlist_id INTEGER  NOT NULL,
-    track_id INTEGER  NOT NULL,
-    CONSTRAINT PK_PlaylistTrack PRIMARY KEY  (playlist_id, track_id),
-    CONSTRAINT fk_playlist FOREIGN KEY (playlist_id) REFERENCES playlists (id)
-    ON DELETE NO ACTION ON UPDATE NO ACTION,
-    CONSTRAINT fk_track FOREIGN KEY (track_id) REFERENCES tracks (id)
     ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 

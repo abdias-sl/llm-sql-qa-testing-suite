@@ -16,3 +16,6 @@ db scripts are in --> `postgres` and `sqlite`
 - functions to get n number of questions from a database
 - create some non-relational dbs
 - create unstructured data
+
+##### Good tools
+- https://www.eraser.io/ai/erd-generator
