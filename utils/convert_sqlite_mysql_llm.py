@@ -47,7 +47,7 @@ def split_sql_into_statements(sql_content):
     
     return statements
 
-def convert_sqlite_to_postgres(sql_content):
+def convert_sqlite_to_mysql(sql_content):
     """Convert SQLite schema to MySQL using LangChain and an LLM, handling large files by processing in chunks."""
     # Initialize the LLM
     llm = ChatAnthropic(model_name="claude-3-7-sonnet-20250219",
@@ -64,7 +64,7 @@ def convert_sqlite_to_postgres(sql_content):
     sql_statements = split_sql_into_statements(sql_content)
     
     # Process each statement separately
-    postgres_statements = []
+    mysql_statements = []
     
     for i, statement in enumerate(sql_statements):
         print(f"  Processing statement {i+1}/{len(sql_statements)}...")
@@ -72,7 +72,7 @@ def convert_sqlite_to_postgres(sql_content):
         # Create a prompt for this specific statement
         prompt = ChatPromptTemplate.from_messages([
             ("system", system_prompt),
-            ("human", f"Convert this SQLite statement to PostgreSQL:\n\n{statement}")
+            ("human", f"Convert this SQLite statement to MySQL:\n\n{statement}")
         ])
         
         # Create the chain
@@ -81,14 +81,14 @@ def convert_sqlite_to_postgres(sql_content):
         # Run the conversion
         try:
             result = chain.invoke({})
-            postgres_statements.append(result.content)
+            mysql_statements.append(result.content)
         except Exception as e:
             print(f"Error processing statement {i+1}: {e}")
             # If there's an error, include the original statement with a comment
-            postgres_statements.append(f"-- Error converting statement: \n{statement}")
+            mysql_statements.append(f"-- Error converting statement: \n{statement}")
     
     # Combine all converted statements
-    return "\n\n".join(postgres_statements)
+    return "\n\n".join(mysql_statements)
 
 def process_directories(input_dir, output_dir):
     """Process all subdirectories, find .sql files, convert them and save to output directory."""
@@ -123,13 +123,13 @@ def process_directories(input_dir, output_dir):
                         file_size = os.path.getsize(input_file_path) / 1024  # in KB
                         print(f"  File size: {file_size:.2f} KB")
                         
-                        # Convert to PostgreSQL
-                        postgres_schema = convert_sqlite_to_postgres(sqlite_schema)
+                        # Convert to mysql
+                        mysql_schema = convert_sqlite_to_mysql(sqlite_schema)
                         
                         # Save the converted schema
                         os.makedirs(output_folder, exist_ok=True)
                         with open(output_file_path, 'w', encoding='utf-8') as f:
-                            f.write(postgres_schema)
+                            f.write(mysql_schema)
                         
                         print(f"  Converted schema saved to {output_file_path}")
                     except Exception as e:
