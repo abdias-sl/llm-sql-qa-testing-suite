@@ -7,3 +7,9 @@ cre_Theme_park
 apartment_rentals
 manufactory_1
 store_1
+college_1
+college_2
+college_3
+student_assessment
+student_transcripts_tracking
+course_teach

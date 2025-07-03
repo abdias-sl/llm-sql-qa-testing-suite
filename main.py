@@ -1,2 +1,5 @@
 from utils.filter_n_save_chosen_databases import filter_n_save_chosen_databases
 from utils.show_original_datasets_info import show_original_datasets_info
+
+#filter_n_save_chosen_databases()
+show_original_datasets_info()
